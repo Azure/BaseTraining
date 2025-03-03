@@ -1,33 +1,84 @@
-# Project
+# ☁️ Azure Training Sessions
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+## ℹ️ Introduction
 
-As the maintainer of this project, please make a few updates:
+Welcome to the Azure Training Program! Over the next four days, we’ll dive into essential topics related to Microsoft Azure. Our goal is to equip you with practical skills and knowledge that you can apply in real-world scenarios.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+### Day 1️⃣: Azure Fundamentals and Landing Zones
 
-## Contributing
+- Explore Azure Landing Zones and Hub & Spoke architecture.
+- Understand general enterprise architecture in Azure.
+- Practical labs: Create vNets, VMs, and storage resources using the Azure GUI (with a clear emphasis that the GUI is read-only).
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+### Day 2️⃣: Identity and CI/CD Pipelines
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+- Dive into Azure Active Directory (Azure AD) and Role-Based Access Control (RBAC).
+- Focus on Privileged Identity Management (PIM) following Microsoft standards.
+- Components of a CI/CD pipeline: GitHub Actions and Terraform.
+- Learn Terraform language basics: resource providers, variables, and modules.
+- Hands-on labs for simple deployments via Terraform.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+### Day 3️⃣: Hands-On Deployments
 
-## Trademarks
+- Practical exercises: Create straightforward deployments via Terraform.
+- Build components like VMs, vNets, App Gateway, AKS, and a database.
+- Ideally, construct a simple application to reinforce concepts.
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+### Day 4️⃣: Modular Deployment and Architecture Design (Optional)
+
+- Explore best practices for modularizing deployments via CI/CD.
+- Develop architecture for a specific service.
+
+Get ready for an engaging and informative learning experience! Let’s explore Azure together. 🚀
+
+## 🎬 Getting started
+
+### General prerequisites
+
+- Computer with internet access (admin rights required)
+- Microsoft authenticator app pre-installed
+- Access to [Azure Portal](https://portal.azure.com/)
+
+Installed fixed versions of the following tools:
+- Powershell 7.2.24
+- Winget v1.9.25200
+- az CLI Version 2.69.0
+- VS Code with HashiCorp Terraform extension v2.34.3 installed
+- Git version 2.48.1
+- Terraform 1.5.7
+- Azd 1.12.0
+- Dubectl v1.32.2
+- Kubctl Client Version: v1.31.4
+- Open SSL
+
+
+### 🧑‍🏫/🧑‍🔬 Chapters
+
+- [Chapter 1 - Technical Basics](chapters/chapter-1/README.md)
+- [Chapter 2 - Lab: Azure Portal](chapters/chapter-2/README.md)
+- [Chapter 3 - Azure AD: Entra ID](chapters/chapter-3/README.md)
+- [Chapter 4 - GitHub & CI/CD](chapters/chapter-4/README.md)
+- [Chapter 5 - Terraform Basics](chapters/chapter-5/README.md)
+- [Chapter 6 - Lab: Simple Terraform Deployment with GitHub](chapters/chapter-6/README.md)
+- [Chapter 7 - Lab: More comprehensive Deployments with GitHub](chapters/chapter-7/README.md)
+- [Chapter 8 - Terraform modularization (Modular Deployments)](chapters/chapter-8/README.md)
+- [Chapter 9 - Extended Architecture Design](chapters/chapter-9/README.md)
+
+## 🗑️ Clean up Azure subscription (Instructors only!)
+
+> [!CAUTION]
+> **Disclaimer for the instructors**
+
+Please remember to clean up your Azure subscription after each day. This will help you avoid unnecessary costs and keep your subscription organized.
+
+In order to clean up your Azure subscription, you can use the provided script:
+
+```bash
+./clean-up-azure-sub.sh <subscription-id>
+```
+
+## 🧑‍🤝‍🧑 Contributors
+
+- Hengameh Bigdeloo - [GitHub](https://github.com/hbigdeloo)
+- Demir Senturk - [GitHub](https://github.com/demirsenturk_microsoft)
+- Sebastian Pfaller - [GitHub]()
