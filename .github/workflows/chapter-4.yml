@@ -1,0 +1,39 @@
+name: Chapter-4
+on:
+  push:
+    branches:
+      - main
+      - master # to be removed
+    paths:
+      - ".github/workflows/chapter-4.yml"
+      - "solutions/chapter-4/demo/**"
+  pull_request:
+    branches:
+      - main
+      - master # to be removed
+  workflow_dispatch:
+jobs:
+  build_and_test:
+    name: Build & Validate
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "solutions/chapter-4/demo/"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.5.7"
+      
+      - name: Terraform fmt
+        id: fmt
+        run: terraform fmt -check
+        continue-on-error: true
+        
+      - name: Terraform Init
+        id: init
+        run: terraform init
+
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color

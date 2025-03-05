@@ -1,0 +1,27 @@
+name: Clean-Up Azure Subscription
+on:
+  workflow_dispatch:
+jobs:
+  remove_resources:
+    name: Remove all Resource Groups in Subscription
+    runs-on: [os-small-amd64-linux]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Log in with Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+      - name: List all existing Resource Groups
+        run: az group list -o table
+
+      - name: Remove all Resource Groups
+        run: |
+          RESOURCE_GROUPS=$(az group list --query "[].name" -o tsv)
+          if [ -n "$RESOURCE_GROUPS" ]; then
+            echo "$RESOURCE_GROUPS" | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
+          else
+            echo "No resource groups found."
+          fi
